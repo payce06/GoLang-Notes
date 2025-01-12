@@ -8,9 +8,9 @@ func main() {
     fmt.Println("World!") // Adds a newline at the end
 
     // Printing with formatting
-    name := "Shreehar"
-    age := 25
-    height := 5.9
+    name := "Payce"
+    age := 15
+    height := 5.7
     fmt.Printf("Name: %s, Age: %d, Height: %.1f\n", name, age, height)
 
     // Using fmt.Sprintf to store formatted string
@@ -32,7 +32,7 @@ func main() {
         FirstName string
         LastName  string
     }
-    person := Person{"Shreehar", "Joshi"}
+    person := Person{"Mitchell", "Kevin"}
     fmt.Printf("Person: %v\n", person)    // %v for default format
     fmt.Printf("Person with fields: %+v\n", person) // %+v to show field names
     fmt.Printf("Person Go syntax: %#v\n", person)   // %#v for Go syntax representation
