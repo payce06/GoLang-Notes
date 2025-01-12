@@ -27,3 +27,37 @@ func main() {
     var uninitializedInt int
     var uninitializedString string
     var uninitializedBool bool
+
+	
+    // ----- Other Data Types -----
+    // Floating point types
+    var bigFloat float64 = 123456.789
+    var smallFloat float32 = 3.14
+
+    // Complex numbers
+    var complexNum complex64 = 1 + 2i
+    var complexNum64 complex128 = 3 + 4i
+
+    // Arrays
+    var arr = [3]int{1, 2, 3}
+
+    // Slices (dynamic arrays)
+    var slice = []int{10, 20, 30}
+
+    // Maps (key-value pairs)
+    var personInfo = map[string]string{
+        "name":    "Payce",
+        "country": "USA",
+    }
+
+    // Struct (custom type)
+    type Person struct {
+        Name    string
+        Age     int
+        Country string
+    }
+    var person = Person{
+        Name:    "Payce",
+        Age:     16,
+        Country: "USA",
+    }
