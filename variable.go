@@ -1,5 +1,3 @@
-package main
-
 import "fmt"
 
 func main() {
@@ -28,7 +26,6 @@ func main() {
     var uninitializedString string
     var uninitializedBool bool
 
-	
     // ----- Other Data Types -----
     // Floating point types
     var bigFloat float64 = 123456.789
@@ -61,3 +58,44 @@ func main() {
         Age:     16,
         Country: "USA",
     }
+
+    // Pointers
+    var ptr *int
+    ptr = &age
+
+    // Print all values
+    fmt.Println("Name:", name)
+    fmt.Println("Age:", age)
+    fmt.Println("Score:", score)
+    fmt.Println("Is Student:", isStudent)
+    fmt.Println("Greeting:", greeting)
+    fmt.Println("Value of Pi (piValue):", piValue)
+
+    fmt.Println("Multiple Declarations:")
+    fmt.Println("x:", x, "y:", y, "z:", z)
+    fmt.Println("a:", a, "b:", b, "c:", c)
+
+    fmt.Println("Constants:")
+    fmt.Println("Pi:", Pi)
+    fmt.Println("Company:", Company)
+
+    fmt.Println("Default Zero Values:")
+    fmt.Println("Uninitialized Int:", uninitializedInt)
+    fmt.Println("Uninitialized String:", uninitializedString)
+    fmt.Println("Uninitialized Bool:", uninitializedBool)
+
+    // ----- Other Data Types -----
+    fmt.Println("\nOther Data Types:")
+    fmt.Println("Big Float (float64):", bigFloat)
+    fmt.Println("Small Float (float32):", smallFloat)
+    fmt.Println("Complex Number (complex64):", complexNum)
+    fmt.Println("Complex Number (complex128):", complexNum64)
+
+    fmt.Println("\nArray:", arr)
+    fmt.Println("Slice:", slice)
+
+    fmt.Println("Map (personInfo):", personInfo)
+    fmt.Println("Struct (person):", person)
+
+    fmt.Println("Pointer to Age:", *ptr)
+}
