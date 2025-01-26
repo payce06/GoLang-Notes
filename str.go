@@ -72,3 +72,34 @@ fmt.Println("Repeated string:", repeatedStr) // Repeats "Go! " three times
 // Checking if string is empty
 isEmpty := str == ""
 fmt.Println("Is the string empty?", isEmpty) // Returns false
+
+
+// Joining elements of a string slice into a single string
+words := []string{"Hello", "GoLang", "World"}
+joinedStr := strings.Join(words, " ")
+fmt.Println("Joined string:", joinedStr) // Joins with a space between words
+
+// String formatting using fmt
+name := "Paice"
+age := 17
+formattedStr := fmt.Sprintf("My name isS %s and I am %d years old.", name, age)
+fmt.Println("Formatted string:", formattedStr)
+
+// Checking for a specific character in a string (example: 'o')
+charIndex := strings.IndexByte(str, 'o')
+fmt.Println("Index of first occurrence of 'o':", charIndex)
+
+// Counting occurrences of a character in a string
+count := strings.Count(str, "o")
+fmt.Println("Count of 'o' in string:", count)
+
+// Comparing two strings
+str1 := "GoLang"
+str2 := "Golang"
+comparison := strings.Compare(str1, str2)
+fmt.Println("Comparison result:", comparison) // Returns 0 if equal, -1 if str1 < str2, 1 if str1 > str2
+
+// Padding the string with a specific character to a certain length
+paddedStr := fmt.Sprintf("%-20s", str)
+fmt.Println("Padded string:", paddedStr)
+}
