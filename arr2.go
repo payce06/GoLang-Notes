@@ -62,3 +62,35 @@ fmt.Println("After deleting element at index 2:", list)
 list = list[:0]
 fmt.Println("After clearing the slice:", list)
 }
+
+package main
+
+import "fmt"
+
+// ----- 1. Function that takes an array -----
+func modifyArray(arr [5]int) {
+// Modifying the array (this will not affect the original array)
+arr[0] = 100
+fmt.Println("Inside modifyArray function:", arr)
+}
+
+// ----- 2. Function that takes a pointer to an array -----
+func modifyArrayByReference(arr *[5]int) {
+// Modifying the array (this will affect the original array)
+arr[0] = 200
+fmt.Println("Inside modifyArrayByReference function:", *arr)
+}
+
+// ----- 3. Function that takes a map -----
+func modifyMap(m map[string]int) {
+// Modifying the map (this will affect the original map)
+m["Alice"] = 95
+m["Bob"] = 100
+fmt.Println("Inside modifyMap function:", m)
+}
+
+// ----- 4. Function that takes a map and a return value -----
+func getMapLength(m map[string]int) int {
+// Returning the length of the map
+return len(m)
+}
