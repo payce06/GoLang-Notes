@@ -47,3 +47,28 @@ fmt.Println("Index of 'GoLang':", index) // Returns index of first occurrence
 // Replacing a substring
 replacedStr := strings.ReplaceAll(str, "World", "Golang")
 fmt.Println("String after replacement:", replacedStr)
+
+
+// Splitting a string into a slice of substrings
+splitStr := strings.Split(str, ", ")
+fmt.Println("Split string:", splitStr) // Splits by ", "
+
+// Trimming whitespace from both ends
+trimmedStr := strings.TrimSpace("   Hello, GoLang!   ")
+fmt.Println("Trimmed string:", trimmedStr)
+
+// Removing leading whitespace
+trimLeftStr := strings.TrimLeft("   Hello, GoLang!", " ")
+fmt.Println("Trimmed left string:", trimLeftStr)
+
+// Removing trailing whitespace
+trimRightStr := strings.TrimRight("   Hello, GoLang!   ", " ")
+fmt.Println("Trimmed right string:", trimRightStr)
+
+// Repeat a string multiple times
+repeatedStr := strings.Repeat("Go! ", 3)
+fmt.Println("Repeated string:", repeatedStr) // Repeats "Go! " three times
+
+// Checking if string is empty
+isEmpty := str == ""
+fmt.Println("Is the string empty?", isEmpty) // Returns false
