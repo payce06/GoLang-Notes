@@ -94,3 +94,34 @@ func getMapLength(m map[string]int) int {
 // Returning the length of the map
 return len(m)
 }
+
+
+func main() {
+// ----- 5. Arrays in Functions -----
+// Declare an array
+arr := [5]int{1, 2, 3, 4, 5}
+
+fmt.Println("Original array:", arr)
+modifyArray(arr)  // Pass array by value
+fmt.Println("Array after modifyArray function:", arr)
+
+// Modify array by reference
+modifyArrayByReference(&arr)  // Pass array by reference (pointer)
+fmt.Println("Array after modifyArrayByReference function:", arr)
+
+// ----- 6. Maps in Functions -----
+// Declare and initialize a map
+studentGrades := map[string]int{
+"Alice": 90,
+"Bob":   85,
+}
+
+fmt.Println("\nOriginal studentGrades map:", studentGrades)
+modifyMap(studentGrades)  // Pass map by reference
+fmt.Println("Map after modifyMap function:", studentGrades)
+
+// ----- 7. Return map length -----
+mapLength := getMapLength(studentGrades)
+fmt.Println("Length of studentGrades map:", mapLength)
+}
+	
