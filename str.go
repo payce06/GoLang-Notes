@@ -103,3 +103,41 @@ fmt.Println("Comparison result:", comparison) // Returns 0 if equal, -1 if str1 
 paddedStr := fmt.Sprintf("%-20s", str)
 fmt.Println("Padded string:", paddedStr)
 }
+
+package main
+
+import (
+"fmt"
+"math"
+)
+
+// ----- 1. Defining a Struct -----
+type Rectangle struct {
+Length, Width float64
+}
+
+type Circle struct {
+Radius float64
+}
+
+// ----- 2. Methods for Structs -----
+func (r Rectangle) Area() float64 {
+return r.Length * r.Width
+}
+
+func (r Rectangle) Perimeter() float64 {
+return 2 * (r.Length + r.Width)
+}
+
+func (c Circle) Area() float64 {
+return math.Pi * c.Radius * c.Radius
+}
+
+func (c Circle) Circumference() float64 {
+return 2 * math.Pi * c.Radius
+}
+
+// ----- 3. Interfaces -----
+type Shape interface {
+Area() float64
+}
