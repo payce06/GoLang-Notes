@@ -23,7 +23,6 @@ fmt.Println("Map 2:", map2)
 appleCount := map1["apple"]
 fmt.Println("Apple count in Map 1:", appleCount)
 
-
 // Checking if a key exists
 _, exists := map1["grapes"]
 fmt.Println("Does 'grapes' exist in Map 1?", exists) // returns false if key doesn't exist
@@ -47,4 +46,22 @@ if !ok {
 fmt.Println("\nKey 'age' does not exist in Map 2.")
 } else {
 fmt.Println("Age:", age)
+}
+
+// Merging two maps (Manually copying entries from map2 to map1)
+for key, value := range map2 {
+map1[key] = len(value) // Example: Storing length of string values in map1
+}
+fmt.Println("\nMap 1 after merging with Map 2:", map1)
+
+// Clearing a map (Setting it to an empty map)
+map1 = make(map[string]int)
+fmt.Println("\nMap 1 after clearing:", map1)
+
+// Checking if the map is empty
+if len(map1) == 0 {
+fmt.Println("Map 1 is empty.")
+} else {
+fmt.Println("Map 1 is not empty.")
+}
 }
