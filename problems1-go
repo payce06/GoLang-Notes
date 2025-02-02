@@ -1,3 +1,5 @@
+problem-1.go
+
 package main
 
 import "fmt"
@@ -22,7 +24,6 @@ func findLargestOfThree(a, b, c int) int {
     return c
 }
 
-
 // 3. Function to determine if a year is a leap year.
 func isLeapYear(year int) bool {
     if (year%4 == 0 && year%100 != 0) || (year%400 == 0) {
@@ -39,7 +40,6 @@ func sumOfList(numbers []int) int {
     }
     return total
 }
-
 
 // 5. Function to print all even numbers in a range.
 func evenNumbersInRange(start, end int) []int {
@@ -63,7 +63,6 @@ func countOccurrences(numbers []int, target int) int {
     return count
 }
 
-
 // 7. Function to find the smallest number in a slice.
 func findSmallest(numbers []int) int {
     smallest := numbers[0]
@@ -74,7 +73,6 @@ func findSmallest(numbers []int) int {
     }
     return smallest
 }
-
 
 // 8. Function to print the multiplication table of a number.
 func multiplicationTable(n int) []string {
@@ -96,7 +94,6 @@ func sumOfOddNumbers(start, end int) int {
     return total
 }
 
-
 // 10. Function to check if a number is prime.
 func isPrime(num int) bool {
     if num <= 1 {
@@ -108,4 +105,23 @@ func isPrime(num int) bool {
         }
     }
     return true
+}
+
+func main() {
+    // Example usages
+    fmt.Println(checkNumber(-5))                  // Output: Negative
+    fmt.Println(findLargestOfThree(3, 7, 5))      // Output: 7
+    fmt.Println(isLeapYear(2024))                 // Output: true
+    fmt.Println(sumOfList([]int{1, 2, 3, 4, 5}))  // Output: 15
+    fmt.Println(evenNumbersInRange(1, 10))        // Output: [2 4 6 8 10]
+    fmt.Println(countOccurrences([]int{1, 2, 2, 3, 4, 2}, 2))  // Output: 3
+    fmt.Println(findSmallest([]int{3, 1, 4, 1, 5})) // Output: 1
+
+    // Print multiplication table of 5
+    for _, line := range multiplicationTable(5) {
+        fmt.Println(line)
+    }
+
+    fmt.Println(sumOfOddNumbers(1, 10))          // Output: 25
+    fmt.Println(isPrime(17))                     // Output: true
 }
