@@ -74,3 +74,24 @@ func findSmallest(numbers []int) int {
     }
     return smallest
 }
+
+
+// 8. Function to print the multiplication table of a number.
+func multiplicationTable(n int) []string {
+    table := []string{}
+    for i := 1; i <= 10; i++ {
+        table = append(table, fmt.Sprintf("%d x %d = %d", n, i, n*i))
+    }
+    return table
+}
+
+// 9. Function to calculate the sum of all odd numbers in a range.
+func sumOfOddNumbers(start, end int) int {
+    total := 0
+    for num := start; num <= end; num++ {
+        if num%2 != 0 {
+            total += num
+        }
+    }
+    return total
+}
