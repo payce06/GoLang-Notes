@@ -39,3 +39,26 @@ func sumOfList(numbers []int) int {
     }
     return total
 }
+
+
+// 5. Function to print all even numbers in a range.
+func evenNumbersInRange(start, end int) []int {
+    evens := []int{}
+    for num := start; num <= end; num++ {
+        if num%2 == 0 {
+            evens = append(evens, num)
+        }
+    }
+    return evens
+}
+
+// 6. Function to count the occurrences of a specific element in a slice.
+func countOccurrences(numbers []int, target int) int {
+    count := 0
+    for _, num := range numbers {
+        if num == target {
+            count++
+        }
+    }
+    return count
+}
