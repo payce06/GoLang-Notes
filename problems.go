@@ -50,3 +50,35 @@ func isPalindrome(s string) bool {
 	}
 	return fibonacci(n-1) + fibonacci(n-2)
 	}
+
+// 6. Function to find the largest number in a list.
+func findLargest(numbers []int) int {
+	largest := numbers[0]
+	for _, num := range numbers {
+	if num > largest {
+	largest = num
+	}
+	}
+	return largest
+	}
+	
+	// 7. Function to reverse a string.
+	func reverseString(s string) string {
+	runes := []rune(s)
+	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+	runes[i], runes[j] = runes[j], runes[i]
+	}
+	return string(runes)
+	}
+	
+	// 8. Function to count the number of vowels in a string.
+	func countVowels(s string) int {
+	vowels := "aeiouAEIOU"
+	count := 0
+	for _, ch := range s {
+	if strings.ContainsRune(vowels, ch) {
+	count++
+	}
+	}
+	return count
+	}
