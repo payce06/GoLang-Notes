@@ -62,3 +62,15 @@ func countOccurrences(numbers []int, target int) int {
     }
     return count
 }
+
+
+// 7. Function to find the smallest number in a slice.
+func findSmallest(numbers []int) int {
+    smallest := numbers[0]
+    for _, num := range numbers {
+        if num < smallest {
+            smallest = num
+        }
+    }
+    return smallest
+}
