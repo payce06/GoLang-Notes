@@ -177,3 +177,37 @@ func difference(arr1, arr2 []int) []int {
 	}
 	return result
 	}
+
+// 16. Function to concatenate two arrays
+func concatenateArrays(arr1, arr2 []int) []int {
+	return append(arr1, arr2...)
+	}
+	
+	// 17. Function that returns the first n elements of an array
+	func firstNElements(arr []int, n int) []int {
+	if n > len(arr) {
+	n = len(arr)
+	}
+	return arr[:n]
+	}
+	
+	// 18. Function to find the common elements in three arrays
+	func commonInThree(arr1, arr2, arr3 []int) []int {
+	seen := map[int]int{}
+	var result []int
+	for _, item := range arr1 {
+	seen[item]++
+	}
+	for _, item := range arr2 {
+	seen[item]++
+	}
+	for _, item := range arr3 {
+	seen[item]++
+	}
+	for item, count := range seen {
+	if count == 3 {
+	result = append(result, item)
+	}
+	}
+	return result
+	}
