@@ -125,3 +125,31 @@ func chunkArray(arr []int, size int) [][]int {
 	}
 	return result
 	}
+
+
+// 13. Function to remove falsy values from an array
+func removeFalsy(arr []interface{}) []interface{} {
+	var result []interface{}
+	for _, item := range arr {
+	if item != nil && item != false && item != 0 && item != "" {
+	result = append(result, item)
+	}
+	}
+	return result
+	}
+	
+	// 14. Function that finds the intersection of two arrays
+	func intersection(arr1, arr2 []int) []int {
+	seen := map[int]bool{}
+	var result []int
+	for _, item := range arr1 {
+	seen[item] = true
+	}
+	for _, item := range arr2 {
+	if seen[item] {
+	result = append(result, item)
+	seen[item] = false // Avoid duplicates
+	}
+	}
+	return result
+	}
