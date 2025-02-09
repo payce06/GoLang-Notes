@@ -48,3 +48,28 @@ func removeDuplicates(array []int) []int {
     }
     return uniqueArray
 }
+
+// 5. Function to reverse an array.
+func reverseArray(array []int) []int {
+    reversedArray := []int{}
+    for i := len(array) - 1; i >= 0; i-- {
+        reversedArray = append(reversedArray, array[i])
+    }
+    return reversedArray
+}
+
+// 6. Function to find the intersection of two arrays.
+func arrayIntersection(array1, array2 []int) []int {
+    intersection := []int{}
+    seen := map[int]bool{}
+    for _, item := range array1 {
+        seen[item] = true
+    }
+    for _, item := range array2 {
+        if seen[item] {
+            intersection = append(intersection, item)
+            seen[item] = false // Avoid duplicates
+        }
+    }
+    return intersection
+}
