@@ -73,3 +73,43 @@ func arrayIntersection(array1, array2 []int) []int {
     }
     return intersection
 }
+
+// 7. Function to find the index of the first occurrence of an element in an array.
+func findIndex(array []int, target int) int {
+    for index, element := range array {
+        if element == target {
+            return index
+        }
+    }
+    return -1 // Return -1 if the element is not found
+}
+
+
+// 8. Function to find all unique elements in an array.
+func uniqueElements(array []int) []int {
+    uniqueArray := []int{}
+    seen := map[int]int{}
+    for _, item := range array {
+        seen[item]++
+    }
+    for item, count := range seen {
+        if count == 1 {
+            uniqueArray = append(uniqueArray, item)
+        }
+    }
+    return uniqueArray
+}
+
+
+func main() {
+    // Example usages
+    fmt.Println(findLength([]int{1, 2, 3, 4})) // Output: 4
+    fmt.Println(sumOfElements([]int{1, 2, 3, 4})) // Output: 10
+    fmt.Println(secondLargest([]int{4, 1, 3, 2, 4})) // Output: 3
+    fmt.Println(removeDuplicates([]int{1, 2, 2, 3, 4, 4})) // Output: [1 2 3 4]
+    fmt.Println(reverseArray([]int{1, 2, 3, 4})) // Output: [4 3 2 1]
+    fmt.Println(arrayIntersection([]int{1, 2, 3}, []int{2, 3, 4})) // Output: [2 3]
+    fmt.Println(findIndex([]int{1, 2, 3, 4, 5}, 3)) // Output: 2
+    fmt.Println(findIndex([]int{1, 2, 3, 4, 5}, 6)) // Output: -1
+    fmt.Println(uniqueElements([]int{1, 2, 2, 3, 4, 4, 5})) // Output: [1 3 5]
+}
