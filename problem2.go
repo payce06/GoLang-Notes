@@ -19,3 +19,32 @@ func sumOfElements(array []int) int {
     }
     return total
 }
+
+
+// 3. Function to find the second largest element in an array.
+func secondLargest(array []int) int {
+    largest := -1 << 31  // Set to minimum possible value
+    secondLargest := -1 << 31
+    for _, num := range array {
+        if num > largest {
+            secondLargest = largest
+            largest = num
+        } else if num > secondLargest && num != largest {
+            secondLargest = num
+        }
+    }
+    return secondLargest
+}
+
+// 4. Function to remove duplicates from an array.
+func removeDuplicates(array []int) []int {
+    uniqueArray := []int{}
+    seen := map[int]bool{}
+    for _, item := range array {
+        if !seen[item] {
+            seen[item] = true
+            uniqueArray = append(uniqueArray, item)
+        }
+    }
+    return uniqueArray
+}
