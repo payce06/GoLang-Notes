@@ -211,3 +211,35 @@ func concatenateArrays(arr1, arr2 []int) []int {
 	}
 	return result
 	}
+
+	
+// 19. Function that returns the unique elements in an array
+func uniqueElements(arr []int) []int {
+	var unique []int
+	seen := map[int]bool{}
+	for _, item := range arr {
+	if !seen[item] {
+	seen[item] = true
+	unique = append(unique, item)
+	}
+	}
+	return unique
+	}
+	
+	// 20. Function that merges two sorted arrays into one sorted array
+	func mergeSortedArrays(arr1, arr2 []int) []int {
+	i, j := 0, 0
+	var result []int
+	for i < len(arr1) && j < len(arr2) {
+	if arr1[i] < arr2[j] {
+	result = append(result, arr1[i])
+	i++
+	} else {
+	result = append(result, arr2[j])
+	j++
+	}
+	}
+	result = append(result, arr1[i:]...)
+	result = append(result, arr2[j:]...)
+	return result
+	}
