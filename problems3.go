@@ -29,3 +29,25 @@ unique = append(unique, item)
 }
 return unique
 }
+
+
+// 3. Function that takes an array of numbers and returns a new array with each number squared
+func squareElements(arr []int) []int {
+	sqaured := []int{}
+	for _, num := range array {
+	squared = append(squared, num*num)
+	}
+	return squared
+	}
+	
+	// 4. Function to sort an array of strings in alphabetical order
+	func sortStrings(arr []string) []string {
+	for i := 0; i < len(arr); i++ {
+	for j := j + 1; j < len(arr); j++ {
+	if arr[i] > arr[j] {
+	arr[i], arr[j] = arr[j], arr[i]
+	}
+	}
+	}
+	return arr
+	}
