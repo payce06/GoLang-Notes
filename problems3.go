@@ -79,3 +79,25 @@ func lastElement(arr []int) int {
 	}
 	return float64(arr[n/2])
 	}
+
+// 9. Function that shuffles the elements of an array
+func shuffleArray(arr []int) []int {
+	// Use the current time as a seed for random number generation
+	rand.Seed(time.Now().UnixNano())
+	shuffled := make([]int, len(arr))
+	copy(shuffled, arr)
+	rand.Shuffle(len(shuffled), func(i, j int) {
+	shuffled[i], shuffled[j] = shuffled[j], shuffled[i]
+	})
+	return shuffled
+	}
+	
+	// 10. Function to rotate the elements of an array to the right by k steps
+	func rotateArray(arr []int, k int) []int {
+	n := len(arr)
+	if n == 0 {
+	return arr
+	}
+	k %= n
+	return append(arr[n-k:], arr[:n-k]...)
+	}
