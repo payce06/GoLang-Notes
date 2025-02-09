@@ -101,3 +101,27 @@ func shuffleArray(arr []int) []int {
 	k %= n
 	return append(arr[n-k:], arr[:n-k]...)
 	}
+
+// 11. Function to split an array into chunks of a specific size
+func chunkArray(arr []int, size int) [][]int {
+	var chunks [][]int
+	for i := 0; i < len(arr); i += size {
+	end := i + size
+	if end > len(arr) {
+	end = len(arr)
+	}
+	chunks = append(chunks, arr[i:end])
+	}
+	return chunks
+	}
+	
+	// 12. Function that takes an array and a number and returns a new array with elements greater than the given number
+	func filterGreater(arr []int, num int) []int {
+	var result []int
+	for _, item := range arr {
+	if item > num {
+	result = append(result, item)
+	}
+	}
+	return result
+	}
