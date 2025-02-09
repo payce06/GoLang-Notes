@@ -113,3 +113,23 @@ func main() {
     fmt.Println(findIndex([]int{1, 2, 3, 4, 5}, 6)) // Output: -1
     fmt.Println(uniqueElements([]int{1, 2, 2, 3, 4, 4, 5})) // Output: [1 3 5]
 }
+
+
+// 7. Function that checks if an array contains a specific value
+func containsValue(arr []int, value int) bool {
+	for _, item := range arr {
+	if item == value {
+	return true
+	}
+	}
+	return false
+	}
+	
+	// 8. Function to flatten a nested array (array of arrays)
+	func flattenArray(nestedArr [][]int) []int {
+	flat := []int{}
+	for _, sublist := range nestedArr {
+	flat = append(flat, sublist...)
+	}
+	return flat
+	}
