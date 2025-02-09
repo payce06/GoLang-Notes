@@ -153,3 +153,27 @@ func removeFalsy(arr []interface{}) []interface{} {
 	}
 	return result
 	}
+
+// 15. Function to find the difference between two arrays
+func difference(arr1, arr2 []int) []int {
+	var result []int
+	seen := map[int]bool{}
+	for _, item := range arr2 {
+	seen[item] = true
+	}
+	for _, item := range arr1 {
+	if !seen[item] {
+	result = append(result, item)
+	}
+	}
+	seen = map[int]bool{}
+	for _, item := range arr1 {
+	seen[item] = true
+	}
+	for _, item := range arr2 {
+	if !seen[item] {
+	result = append(result, item)
+	}
+	}
+	return result
+	}
