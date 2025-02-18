@@ -151,3 +151,22 @@ func isSorted(arr []int) bool {
 	}
 	return maxLength
 	}
+
+
+// 14. Find the average of an array of numbers using a for loop
+func averageArray(arr []int) float64 {
+	total := 0
+	for _, num := range arr {
+	total += num
+	}
+	return float64(total) / float64(len(arr))
+	}
+	
+	// 15. Create a new array with every second element of an existing array using a for loop
+	func everySecondElement(arr []int) []int {
+	result := []int{}
+	for i := 1; i < len(arr); i += 2 {
+	result = append(result, arr[i])
+	}
+	return result
+	}
