@@ -227,3 +227,23 @@ func commonElements(arr1, arr2 []int) []int {
 	}
 	return result
 	}
+
+
+	func split(s, sep string) []string {
+		var result []string
+		var word string
+		for _, char := range s {
+		if string(char) == sep {
+		if word != "" {
+		result = append(result, word)
+		word = ""
+		}
+		} else {
+		word += string(char)
+		}
+		}
+		if word != "" {
+		result = append(result, word)
+		}
+		return result
+		}
