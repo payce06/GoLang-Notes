@@ -212,3 +212,18 @@ func power(base, exponent int) int {
 	}
 	return count
 	}
+
+
+// 20. Find the common elements between two arrays using a for loop
+func commonElements(arr1, arr2 []int) []int {
+	result := []int{}
+	for _, item := range arr1 {
+	for _, item2 := range arr2 {
+	if item == item2 {
+	result = append(result, item)
+	break
+	}
+	}
+	}
+	return result
+	}
