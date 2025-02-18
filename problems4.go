@@ -90,3 +90,22 @@ func findSmallest(arr []int) int {
 	}
 	return product
 	}
+
+
+// 9. Print all prime numbers up to n using a for loop
+func printPrimes(n int) []int {
+	primes := []int{}
+	for num := 2; num <= n; num++ {
+	isPrime := true
+	for i := 2; i <= int(math.Sqrt(float64(num)))+1; i++ {
+	if num%i == 0 {
+	isPrime = false
+	break
+	}
+	}
+	if isPrime {
+	primes = append(primes, num)
+	}
+	}
+	return primes
+	}
