@@ -191,3 +191,24 @@ func secondLargest(arr []int) int {
 	result = append(result, arr2...)
 	return result
 	}
+
+
+// 18. Calculate the power of a number using a for loop
+func power(base, exponent int) int {
+	result := 1
+	for i := 0; i < exponent; i++ {
+	result *= base
+	}
+	return result
+	}
+	
+	// 19. Count how many even numbers are in an array using a for loop
+	func countEvens(arr []int) int {
+	count := 0
+	for _, num := range arr {
+	if num%2 == 0 {
+	count++
+	}
+	}
+	return count
+	}
