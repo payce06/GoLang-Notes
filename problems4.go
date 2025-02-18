@@ -28,3 +28,23 @@ fmt.Println(i)
 }
 }
 }
+
+// 3. Sum of all numbers in an array using a for loop
+func sumArray(arr []int) int {
+	total := 0
+	for _, num := range arr {
+	total += num
+	}
+	return total
+	}
+	
+	// 4. First n Fibonacci numbers using a for loop
+	func fibonacci(n int) []int {
+	fibSequence := []int{}
+	a, b := 0, 1
+	for i := 0; i < n; i++ {
+	fibSequence = append(fibSequence, a)
+	a, b = b, a+b
+	}
+	return fibSequence
+	}
