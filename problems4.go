@@ -128,3 +128,26 @@ func reverseArray(arr []int) []int {
 	}
 	return result
 	}
+
+
+// 12. Check if an array is sorted in ascending order using a for loop
+func isSorted(arr []int) bool {
+	for i := 0; i < len(arr)-1; i++ {
+	if arr[i] > arr[i+1] {
+	return false
+	}
+	}
+	return true
+	}
+	
+	// 13. Find the length of the longest word in a string using a for loop
+	func longestWordLength(s string) int {
+	words := split(s, " ")
+	maxLength := 0
+	for _, word := range words {
+	if len(word) > maxLength {
+	maxLength = len(word)
+	}
+	}
+	return maxLength
+	}
