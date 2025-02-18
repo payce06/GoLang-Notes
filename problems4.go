@@ -48,3 +48,24 @@ func sumArray(arr []int) int {
 	}
 	return fibSequence
 	}
+
+
+// 5. Calculate the factorial of a number using a for loop
+func factorial(n int) int {
+	result := 1
+	for i := 1; i <= n; i++ {
+	result *= i
+	}
+	return result
+	}
+	
+	// 6. Count occurrences of a specific character in a string using a for loop
+	func countCharacter(s string, char rune) int {
+	count := 0
+	for _, c := range s {
+	if c == char {
+	count++
+	}
+	}
+	return count
+	}
