@@ -69,3 +69,24 @@ func factorial(n int) int {
 	}
 	return count
 	}
+
+
+// 7. Find the smallest number in an array using a for loop
+func findSmallest(arr []int) int {
+	smallest := arr[0]
+	for _, num := range arr {
+	if num < smallest {
+	smallest = num
+	}
+	}
+	return smallest
+	}
+	
+	// 8. Multiply all the numbers in an array using a for loop
+	func multiplyArray(arr []int) int {
+	product := 1
+	for _, num := range arr {
+	product *= num
+	}
+	return product
+	}
