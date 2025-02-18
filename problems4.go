@@ -109,3 +109,22 @@ func printPrimes(n int) []int {
 	}
 	return primes
 	}
+
+
+// 10. Reverse the elements of an array using a for loop
+func reverseArray(arr []int) []int {
+	reversedArr := []int{}
+	for i := len(arr) - 1; i >= 0; i-- {
+	reversedArr = append(reversedArr, arr[i])
+	}
+	return reversedArr
+	}
+	
+	// 11. Concatenate all strings in an array using a for loop
+	func concatenateStrings(arr []string) string {
+	result := ""
+	for _, str := range arr {
+	result += str
+	}
+	return result
+	}
