@@ -170,3 +170,24 @@ func averageArray(arr []int) float64 {
 	}
 	return result
 	}
+
+
+// 16. Find the second largest number in an array using a for loop
+func secondLargest(arr []int) int {
+	largest, second := -int(math.MaxInt64), -int(math.MaxInt64)
+	for _, num := range arr {
+	if num > largest {
+	second, largest = largest, num
+	} else if num > second && num < largest {
+	second = num
+	}
+	}
+	return second
+	}
+	
+	// 17. Merge two arrays into one using a for loop
+	func mergeArrays(arr1, arr2 []int) []int {
+	result := append([]int{}, arr1...)
+	result = append(result, arr2...)
+	return result
+	}
