@@ -172,3 +172,25 @@ func keysWithHighestValue(obj map[string]interface{}) []string {
 	}
 	return highestKeys
 }
+
+// 19. Convert an object to a query string
+func objectToQueryString(obj map[string]interface{}) string {
+	var queryString []string
+	for key, value := range obj {
+		queryString = append(queryString, fmt.Sprintf("%s=%v", key, value))
+	}
+	return strings.Join(queryString, "&")
+}
+
+// 20. Get a nested value from an object using a key path
+func getNestedValue(obj map[string]interface{}, keyPath string) interface{} {
+	keys := strings.Split(keyPath, ".")
+	for _, key := range keys {
+		if subObj, ok := obj[key].(map[string]interface{}); ok {
+			obj = subObj
+		} else {
+			return nil
+		}
+	}
+	return obj
+}
