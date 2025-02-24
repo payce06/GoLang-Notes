@@ -214,3 +214,24 @@ func main() {
 	original := map[string]interface{}{"a": 1, "b": map[string]interface{}{"c": 2}}
 	clone := deepClone(original)
 	fmt.Println(clone) // Output: map[a:1 b:map[c:2]]
+
+	// 6. Get Keys
+	fmt.Println(getKeys(map[string]interface{}{"a": 1, "b": 2})) // Output: [a b]
+
+	// 7. Get Values
+	fmt.Println(getValues(map[string]interface{}{"a": 1, "b": 2})) // Output: [1 2]
+
+	// 8. Invert Object
+	fmt.Println(invertObject(map[string]interface{}{"a": 1, "b": 2})) // Output: map[1:a 2:b]
+
+	// 9. Add Property
+	fmt.Println(addProperty(map[string]interface{}{"a": 1}, "b", 2)) // Output: map[a:1 b:2]
+
+	// 10. Delete Property
+	fmt.Println(deleteProperty(map[string]interface{}{"a": 1, "b": 2}, "b")) // Output: map[a:1]
+
+	// 11. Are Objects Equal
+	fmt.Println(areObjectsEqual(map[string]interface{}{"a": 1, "b": 2}, map[string]interface{}{"a": 1, "b": 2})) // Output: true
+
+	// 12. Object to Pairs
+	fmt.Println(objectToPairs(map[string]interface{}{"a": 1, "b": 2})) // Output: [[a 1] [b 2]]
