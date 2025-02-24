@@ -56,3 +56,21 @@ func getKeys(obj map[string]interface{}) []string {
 	}
 	return keys
 }
+
+// 7. Get the values of an object
+func getValues(obj map[string]interface{}) []interface{} {
+	var values []interface{}
+	for _, value := range obj {
+		values = append(values, value)
+	}
+	return values
+}
+
+// 8. Invert the keys and values of an object
+func invertObject(obj map[string]interface{}) map[interface{}]string {
+	inverted := make(map[interface{}]string)
+	for key, value := range obj {
+		inverted[value] = key
+	}
+	return inverted
+}
