@@ -239,25 +239,25 @@ return result
 }
 
 func main() {
-	// Example usages
-	fmt.Println(findMaximum([]int{3, 1, 4, 1, 5, 9}))           // Output: 9
-	fmt.Println(removeDuplicates([]int{1, 2, 2, 3, 4, 4, 5}))   // Output: [1 2 3 4 5]
-	fmt.Println(squareElements([]int{1, 2, 3, 4}))              // Output: [1 4 9 16]
-	fmt.Println(sortStrings([]string{"banana", "apple", "cherry"})) // Output: ['apple', 'banana', 'cherry']
-	fmt.Println(lastElement([]int{1, 2, 3, 4}))                 // Output: 4
-	fmt.Println(findMedian([]int{1, 3, 3, 6, 7, 8, 9}))         // Output: 6
-	fmt.Println(containsValue([]int{1, 2, 3, 4}, 3))            // Output: true
-	fmt.Println(flattenArray([][]int{{1, 2}, {3, 4}, {5}}))     // Output: [1 2 3 4 5]
-	fmt.Println(shuffleArray([]int{1, 2, 3, 4}))                // Output: Random order of [1, 2, 3, 4]
-	fmt.Println(rotateArray([]int{1, 2, 3, 4, 5}, 2))          // Output: [4 5 1 2 3]
-	fmt.Println(chunkArray([]int{1, 2, 3, 4, 5}, 2))           // Output: [[1 2] [3 4] [5]]
-	fmt.Println(filterGreater([]int{1, 2, 3, 4, 5}, 3))        // Output: [4 5]
-	fmt.Println(removeFalsy([]interface{}{0, 1, false, 2, "", 3, nil})) // Output: [1 2 3]
-	fmt.Println(intersection([]int{1, 2, 3}, []int{2, 3, 4}))   // Output: [2 3]
-	fmt.Println(difference([]int{1, 2, 3}, []int{2, 3, 4}))     // Output: [1 4]
-	fmt.Println(concatenateArrays([]int{1, 2}, []int{3, 4}))    // Output: [1 2 3 4]
-	fmt.Println(firstNElements([]int{1, 2, 3, 4, 5}, 3))       // Output: [1 2 3]
-	fmt.Println(commonInThree([]int{1, 2, 3}, []int{2, 3, 4}, []int{3, 4, 5})) // Output: [3]
-	fmt.Println(uniqueElements([]int{1, 2, 2, 3, 4, 4, 5}))   // Output: [1 2 3 4 5]
-	fmt.Println(mergeSortedArrays([]int{1, 3, 5}, []int{2, 4, 6})) // Output: [1 2 3 4 5 6]
+	// Test each function
+	fmt.Println(reverseString("hello"))             // Output: "olleh"
+	fizzBuzz()                                       // Prints Fizz, Buzz, or FizzBuzz for numbers 1 to 100
+	fmt.Println(sumArray([]int{1, 2, 3, 4, 5}))      // Output: 15
+	fmt.Println(fibonacci(10))                       // Output: [0 1 1 2 3 5 8 13 21 34]
+	fmt.Println(factorial(5))                        // Output: 120
+	fmt.Println(countCharacter("hello world", 'o'))  // Output: 2
+	fmt.Println(findSmallest([]int{3, 1, 4, 1, 5, 9})) // Output: 1
+	fmt.Println(multiplyArray([]int{1, 2, 3, 4}))     // Output: 24
+	fmt.Println(printPrimes(20))                     // Output: [2 3 5 7 11 13 17 19]
+	fmt.Println(reverseArray([]int{1, 2, 3, 4, 5}))  // Output: [5 4 3 2 1]
+	fmt.Println(concatenateStrings([]string{"Hello", " ", "world", "!"})) // Output: "Hello world!"
+	fmt.Println(isSorted([]int{1, 2, 3, 4, 5}))      // Output: true
+	fmt.Println(longestWordLength("The quick brown fox jumps over the lazy dog")) // Output: 5
+	fmt.Println(averageArray([]int{1, 2, 3, 4, 5}))  // Output: 3.0
+	fmt.Println(everySecondElement([]int{1, 2, 3, 4, 5, 6})) // Output: [2 4 6]
+	fmt.Println(secondLargest([]int{10, 20, 4, 45, 99})) // Output: 45
+	fmt.Println(mergeArrays([]int{1, 2, 3}, []int{4, 5, 6})) // Output: [1 2 3 4 5 6]
+	fmt.Println(power(2, 3))                        // Output: 8
+	fmt.Println(countEvens([]int{1, 2, 3, 4, 5, 6})) // Output: 3
+	fmt.Println(commonElements([]int{1, 2, 3, 4}, []int{3, 4, 5, 6})) // Output: [3 4]
 	}
