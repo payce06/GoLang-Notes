@@ -74,3 +74,29 @@ func invertObject(obj map[string]interface{}) map[interface{}]string {
 	}
 	return inverted
 }
+
+
+// 9. Add a property to an object
+func addProperty(obj map[string]interface{}, key string, value interface{}) map[string]interface{} {
+	obj[key] = value
+	return obj
+}
+
+// 10. Delete a property from an object
+func deleteProperty(obj map[string]interface{}, key string) map[string]interface{} {
+	delete(obj, key)
+	return obj
+}
+
+// 11. Check if two objects are equal
+func areObjectsEqual(obj1, obj2 map[string]interface{}) bool {
+	if len(obj1) != len(obj2) {
+		return false
+	}
+	for key, value := range obj1 {
+		if obj2[key] != value {
+			return false
+		}
+	}
+	return true
+}
