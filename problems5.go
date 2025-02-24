@@ -139,3 +139,19 @@ func getEntries(obj map[string]interface{}) [][2]interface{} {
 	}
 	return entries
 }
+
+// 16. Check if an object is empty
+func isObjectEmpty(obj map[string]interface{}) bool {
+	return len(obj) == 0
+}
+
+// 17. Get common keys and values between two objects
+func commonKeysValues(obj1, obj2 map[string]interface{}) map[string]interface{} {
+	common := make(map[string]interface{})
+	for key, value := range obj1 {
+		if obj2[key] == value {
+			common[key] = value
+		}
+	}
+	return common
+}
