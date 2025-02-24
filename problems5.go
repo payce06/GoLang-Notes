@@ -121,3 +121,21 @@ func sortObjects(arr []map[string]interface{}, prop string) []map[string]interfa
 	}
 	return arr
 }
+
+// 14. Create an object from two arrays (keys and values)
+func createObject(keys []string, values []interface{}) map[string]interface{} {
+	obj := make(map[string]interface{})
+	for i := 0; i < len(keys); i++ {
+		obj[keys[i]] = values[i]
+	}
+	return obj
+}
+
+// 15. Get the entries of an object
+func getEntries(obj map[string]interface{}) [][2]interface{} {
+	var entries [][2]interface{}
+	for key, value := range obj {
+		entries = append(entries, [2]interface{}{key, value})
+	}
+	return entries
+}
