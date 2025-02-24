@@ -155,3 +155,20 @@ func commonKeysValues(obj1, obj2 map[string]interface{}) map[string]interface{} 
 	}
 	return common
 }
+
+// 18. Find the keys with the highest value in an object
+func keysWithHighestValue(obj map[string]interface{}) []string {
+	maxValue := -1 << 63 // Minimum possible value
+	var highestKeys []string
+	for key, value := range obj {
+		if val, ok := value.(int); ok {
+			if val > maxValue {
+				maxValue = val
+				highestKeys = []string{key}
+			} else if val == maxValue {
+				highestKeys = append(highestKeys, key)
+			}
+		}
+	}
+	return highestKeys
+}
