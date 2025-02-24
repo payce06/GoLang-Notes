@@ -235,3 +235,29 @@ func main() {
 
 	// 12. Object to Pairs
 	fmt.Println(objectToPairs(map[string]interface{}{"a": 1, "b": 2})) // Output: [[a 1] [b 2]]
+	
+	// 13. Sort Objects
+	arr := []map[string]interface{}{{"a": 3}, {"a": 1}, {"a": 2}}
+	fmt.Println(sortObjects(arr, "a")) // Output: [map[a:1] map[a:2] map[a:3]]
+
+	// 14. Create Object
+	fmt.Println(createObject([]string{"a", "b"}, []interface{}{1, 2})) // Output: map[a:1 b:2]
+
+	// 15. Get Entries
+	fmt.Println(getEntries(map[string]interface{}{"a": 1, "b": 2})) // Output: [[a 1] [b 2]]
+
+	// 16. Is Object Empty
+	fmt.Println(isObjectEmpty(map[string]interface{}{})) // Output: true
+
+	// 17. Common Keys and Values
+	fmt.Println(commonKeysValues(map[string]interface{}{"a": 1, "b": 2}, map[string]interface{}{"b": 2, "c": 3})) // Output: map[b:2]
+
+	// 18. Keys with Highest Value
+	fmt.Println(keysWithHighestValue(map[string]interface{}{"a": 1, "b": 3, "c": 3})) // Output: [b c]
+
+	// 19. Object to Query String
+	fmt.Println(objectToQueryString(map[string]interface{}{"a": 1, "b": 2})) // Output: a=1&b=2
+
+	// 20. Get Nested Value
+	fmt.Println(getNestedValue(map[string]interface{}{"a": map[string]interface{}{"b": map[string]interface{}{"c": 1}}}, "a.b.c")) // Output: 1
+}
