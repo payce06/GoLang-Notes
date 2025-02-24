@@ -100,3 +100,24 @@ func areObjectsEqual(obj1, obj2 map[string]interface{}) bool {
 	}
 	return true
 }
+
+// 12. Convert an object to an array of key-value pairs
+func objectToPairs(obj map[string]interface{}) [][2]interface{} {
+	var pairs [][2]interface{}
+	for key, value := range obj {
+		pairs = append(pairs, [2]interface{}{key, value})
+	}
+	return pairs
+}
+
+// 13. Sort an array of objects by a specific property
+func sortObjects(arr []map[string]interface{}, prop string) []map[string]interface{} {
+	for i := 0; i < len(arr); i++ {
+		for j := i + 1; j < len(arr); j++ {
+			if arr[i][prop].(int) > arr[j][prop].(int) {
+				arr[i], arr[j] = arr[j], arr[i]
+			}
+		}
+	}
+	return arr
+}
