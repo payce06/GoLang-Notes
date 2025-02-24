@@ -194,3 +194,23 @@ func getNestedValue(obj map[string]interface{}, keyPath string) interface{} {
 	}
 	return obj
 }
+
+func main() {
+	// Test functions
+
+	// 1. Merge Objects
+	fmt.Println(mergeObjects(map[string]interface{}{"a": 1, "b": 2}, map[string]interface{}{"b": 3, "c": 4})) // Output: map[a:1 b:3 c:4]
+
+	// 2. Count Properties
+	fmt.Println(countProperties(map[string]interface{}{"a": 1, "b": 2, "c": 3})) // Output: 3
+
+	// 3. Get Property Values
+	fmt.Println(getPropertyValues([]map[string]interface{}{{"a": 1}, {"a": 2}, {"b": 3}}, "a")) // Output: [1 2]
+
+	// 4. Contains Property
+	fmt.Println(containsProperty(map[string]interface{}{"a": 1, "b": 2}, "b")) // Output: true
+
+	// 5. Deep Clone
+	original := map[string]interface{}{"a": 1, "b": map[string]interface{}{"c": 2}}
+	clone := deepClone(original)
+	fmt.Println(clone) // Output: map[a:1 b:map[c:2]]
