@@ -38,3 +38,21 @@ func containsProperty(obj map[string]interface{}, prop string) bool {
 	_, exists := obj[prop]
 	return exists
 }
+
+// 5. Deep clone an object
+func deepClone(obj map[string]interface{}) map[string]interface{} {
+	clone := make(map[string]interface{})
+	for key, value := range obj {
+		clone[key] = value
+	}
+	return clone
+}
+
+// 6. Get the keys of an object
+func getKeys(obj map[string]interface{}) []string {
+	var keys []string
+	for key := range obj {
+		keys = append(keys, key)
+	}
+	return keys
+}
