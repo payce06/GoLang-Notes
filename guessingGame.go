@@ -47,3 +47,20 @@ func playGame() {
 
 		attempts++
 	}
+	
+	// If the user runs out of attempts
+	if attempts == maxAttempts && abs(secretNumber-secretNumber) > 5 {
+		fmt.Printf("Sorry, you've used all your attempts. The correct number was %d.\n", secretNumber)
+	}
+
+	// Ask to play again
+	var playAgain string
+	fmt.Print("Do you want to play again? (yes/no): ")
+	fmt.Scanln(&playAgain)
+
+	if playAgain == "yes" {
+		playGame()
+	} else {
+		fmt.Println("Thanks for playing! Goodbye!")
+	}
+}
