@@ -31,3 +31,19 @@ func playGame() {
 			fmt.Println("Please enter a valid number.")
 			continue
 		}
+	
+		// Check the guess
+		if guess == secretNumber {
+			fmt.Printf("Congratulations! You guessed the exact number in %d attempts!\n", attempts+1)
+			break
+		} else if abs(guess-secretNumber) <= 5 {
+			fmt.Printf("Great job! Your guess %d is within 5 of the correct number (%d). You win!\n", guess, secretNumber)
+			break
+		} else if guess < secretNumber {
+			fmt.Println("Too low!")
+		} else {
+			fmt.Println("Too high!")
+		}
+
+		attempts++
+	}
