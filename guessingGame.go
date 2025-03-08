@@ -18,7 +18,7 @@ func playGame() {
 	secretNumber := rand.Intn(100) + 1
 	attempts := 0
 	maxAttempts := 7 // Allow up to 7 attempts
-	
+
 	for attempts < maxAttempts {
 		// Take user input
 		fmt.Printf("Attempt %d/%d: Make a guess: ", attempts+1, maxAttempts)
@@ -31,7 +31,7 @@ func playGame() {
 			fmt.Println("Please enter a valid number.")
 			continue
 		}
-	
+
 		// Check the guess
 		if guess == secretNumber {
 			fmt.Printf("Congratulations! You guessed the exact number in %d attempts!\n", attempts+1)
@@ -47,7 +47,7 @@ func playGame() {
 
 		attempts++
 	}
-	
+
 	// If the user runs out of attempts
 	if attempts == maxAttempts && abs(secretNumber-secretNumber) > 5 {
 		fmt.Printf("Sorry, you've used all your attempts. The correct number was %d.\n", secretNumber)
@@ -63,4 +63,18 @@ func playGame() {
 	} else {
 		fmt.Println("Thanks for playing! Goodbye!")
 	}
+}
+
+// Helper function to calculate the absolute difference
+func abs(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
+}
+
+// Main function to start the game
+func main() {
+	// Start the game
+	playGame()
 }
