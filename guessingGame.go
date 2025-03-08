@@ -18,3 +18,16 @@ func playGame() {
 	secretNumber := rand.Intn(100) + 1
 	attempts := 0
 	maxAttempts := 7 // Allow up to 7 attempts
+	
+	for attempts < maxAttempts {
+		// Take user input
+		fmt.Printf("Attempt %d/%d: Make a guess: ", attempts+1, maxAttempts)
+		var input string
+		fmt.Scanln(&input)
+
+		// Convert input to integer
+		guess, err := strconv.Atoi(input)
+		if err != nil {
+			fmt.Println("Please enter a valid number.")
+			continue
+		}
