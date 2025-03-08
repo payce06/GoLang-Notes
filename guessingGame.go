@@ -1,0 +1,20 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"time"
+	"strconv"
+)
+
+// Function to play the game
+func playGame() {
+	fmt.Println("Welcome to the Number Guessing Game!")
+	fmt.Println("I'm thinking of a number between 1 and 100.")
+	fmt.Println("If your guess is within 5 of the number, you win!")
+
+	// Generate a random number between 1 and 100
+	rand.Seed(time.Now().UnixNano())
+	secretNumber := rand.Intn(100) + 1
+	attempts := 0
+	maxAttempts := 7 // Allow up to 7 attempts
