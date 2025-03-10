@@ -24,3 +24,12 @@ func (c *Course) EnrollStudent(student *Student) {
 	c.Students = append(c.Students, student)
 	fmt.Printf("%s has been enrolled in %s.\n", student.Name, c.CourseName)
 }
+
+// DisplayStudents method to display all students enrolled in the course
+func (c *Course) DisplayStudents() {
+	fmt.Printf("Course: %s (%s)\n", c.CourseName, c.CourseCode)
+	fmt.Println("Enrolled Students:")
+	for _, student := range c.Students {
+		fmt.Printf("- %s (ID: %s)\n", student.Name, student.StudentID)
+	}
+}
