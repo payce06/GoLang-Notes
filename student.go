@@ -115,3 +115,12 @@ func (sms *StudentManagementSystem) AddStudent(student *Student) {
 		fmt.Printf("Student ID %s already exists.\n", student.StudentID)
 	}
 }
+// AddCourse method to add a course to the system
+func (sms *StudentManagementSystem) AddCourse(course *Course) {
+	if _, exists := sms.Courses[course.CourseCode]; !exists {
+		sms.Courses[course.CourseCode] = course
+		fmt.Printf("Course %s added to the system.\n", course.CourseName)
+	} else {
+		fmt.Printf("Course Code %s already exists.\n", course.CourseCode)
+	}
+}
