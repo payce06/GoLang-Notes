@@ -124,3 +124,14 @@ func (sms *StudentManagementSystem) AddCourse(course *Course) {
 		fmt.Printf("Course Code %s already exists.\n", course.CourseCode)
 	}
 }
+// SearchStudent method to search for a student by their ID
+func (sms *StudentManagementSystem) SearchStudent(studentID string) *Student {
+	return sms.Students[studentID]
+}
+
+// DisplayAllStudents method to display all students in the system
+func (sms *StudentManagementSystem) DisplayAllStudents() {
+	for _, student := range sms.Students {
+		student.DisplayInfo()
+	}
+}
