@@ -42,3 +42,13 @@ type Student struct {
 	StudentID string
 	Courses   map[string][]float64 // Map to store courses and their grades
 }
+
+// EnrollInCourse method to enroll the student in a course
+func (s *Student) EnrollInCourse(course *Course) {
+	if _, exists := s.Courses[course.CourseCode]; !exists {
+		s.Courses[course.CourseCode] = []float64{}
+		course.EnrollStudent(s)
+	} else {
+		fmt.Printf("%s is already enrolled in %s.\n", s.Name, course.CourseName)
+	}
+}
