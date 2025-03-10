@@ -33,3 +33,12 @@ func (c *Course) DisplayStudents() {
 		fmt.Printf("- %s (ID: %s)\n", student.Name, student.StudentID)
 	}
 }
+
+
+// Student struct
+type Student struct {
+	Name      string
+	Age       int
+	StudentID string
+	Courses   map[string][]float64 // Map to store courses and their grades
+}
