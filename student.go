@@ -99,3 +99,19 @@ func (s *Student) DisplayInfo() {
 	}
 	fmt.Printf("GPA: %.2f\n", s.CalculateGPA())
 }
+
+// StudentManagementSystem struct
+type StudentManagementSystem struct {
+	Students map[string]*Student
+	Courses  map[string]*Course
+}
+
+// AddStudent method to add a student to the system
+func (sms *StudentManagementSystem) AddStudent(student *Student) {
+	if _, exists := sms.Students[student.StudentID]; !exists {
+		sms.Students[student.StudentID] = student
+		fmt.Printf("Student %s added to the system.\n", student.Name)
+	} else {
+		fmt.Printf("Student ID %s already exists.\n", student.StudentID)
+	}
+}
