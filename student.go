@@ -82,3 +82,20 @@ func (s *Student) CalculateGPA() float64 {
 	}
 	return totalGrades / float64(totalCourses)
 }
+
+// DisplayInfo method to display the student's information
+func (s *Student) DisplayInfo() {
+	fmt.Printf("Student ID: %s\n", s.StudentID)
+	fmt.Printf("Name: %s\n", s.Name)
+	fmt.Printf("Age: %d\n", s.Age)
+	fmt.Println("Courses and Grades:")
+	for courseCode, grades := range s.Courses {
+		avg := 0.0
+		for _, grade := range grades {
+			avg += grade
+		}
+		avg = avg / float64(len(grades))
+		fmt.Printf("  %s: %v (Average: %.2f)\n", courseCode, grades, avg)
+	}
+	fmt.Printf("GPA: %.2f\n", s.CalculateGPA())
+}
