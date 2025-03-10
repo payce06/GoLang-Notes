@@ -143,3 +143,15 @@ func main() {
 		Students: make(map[string]*Student),
 		Courses:  make(map[string]*Course),
 	}
+	
+	// Create courses
+	course1 := &Course{CourseName: "Mathematics", CourseCode: "MATH101"}
+	course2 := &Course{CourseName: "Computer Science", CourseCode: "CS101"}
+
+	// Add courses to the system
+	sms.AddCourse(course1)
+	sms.AddCourse(course2)
+
+	// Create students
+	student1 := &Student{Name: "Alice Johnson", Age: 20, StudentID: "S12345", Courses: make(map[string][]float64)}
+	student2 := &Student{Name: "Bob Smith", Age: 22, StudentID: "S67890", Courses: make(map[string][]float64)}
