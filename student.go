@@ -52,3 +52,17 @@ func (s *Student) EnrollInCourse(course *Course) {
 		fmt.Printf("%s is already enrolled in %s.\n", s.Name, course.CourseName)
 	}
 }
+
+// AddGrade method to add a grade for a specific course
+func (s *Student) AddGrade(courseCode string, grade float64) {
+	if grades, exists := s.Courses[courseCode]; exists {
+		if grade >= 0 && grade <= 100 {
+			s.Courses[courseCode] = append(grades, grade)
+			fmt.Printf("Grade %.2f added for %s in course %s.\n", grade, s.Name, courseCode)
+		} else {
+			fmt.Println("Invalid grade. Please enter a grade between 0 and 100.")
+		}
+	} else {
+		fmt.Printf("%s is not enrolled in the course with code %s.\n", s.Name, courseCode)
+	}
+}
