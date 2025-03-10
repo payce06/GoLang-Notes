@@ -135,3 +135,11 @@ func (sms *StudentManagementSystem) DisplayAllStudents() {
 		student.DisplayInfo()
 	}
 }
+
+// Main function
+func main() {
+	// Create the management system
+	sms := &StudentManagementSystem{
+		Students: make(map[string]*Student),
+		Courses:  make(map[string]*Course),
+	}
