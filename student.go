@@ -12,7 +12,6 @@ type Course struct {
 	Students   []*Student // Slice to store enrolled students
 }
 
-
 // EnrollStudent method to enroll a student in a course
 func (c *Course) EnrollStudent(student *Student) {
 	for _, s := range c.Students {
@@ -33,7 +32,6 @@ func (c *Course) DisplayStudents() {
 		fmt.Printf("- %s (ID: %s)\n", student.Name, student.StudentID)
 	}
 }
-
 
 // Student struct
 type Student struct {
@@ -115,6 +113,7 @@ func (sms *StudentManagementSystem) AddStudent(student *Student) {
 		fmt.Printf("Student ID %s already exists.\n", student.StudentID)
 	}
 }
+
 // AddCourse method to add a course to the system
 func (sms *StudentManagementSystem) AddCourse(course *Course) {
 	if _, exists := sms.Courses[course.CourseCode]; !exists {
@@ -124,6 +123,7 @@ func (sms *StudentManagementSystem) AddCourse(course *Course) {
 		fmt.Printf("Course Code %s already exists.\n", course.CourseCode)
 	}
 }
+
 // SearchStudent method to search for a student by their ID
 func (sms *StudentManagementSystem) SearchStudent(studentID string) *Student {
 	return sms.Students[studentID]
@@ -143,7 +143,7 @@ func main() {
 		Students: make(map[string]*Student),
 		Courses:  make(map[string]*Course),
 	}
-	
+
 	// Create courses
 	course1 := &Course{CourseName: "Mathematics", CourseCode: "MATH101"}
 	course2 := &Course{CourseName: "Computer Science", CourseCode: "CS101"}
@@ -155,3 +155,25 @@ func main() {
 	// Create students
 	student1 := &Student{Name: "Alice Johnson", Age: 20, StudentID: "S12345", Courses: make(map[string][]float64)}
 	student2 := &Student{Name: "Bob Smith", Age: 22, StudentID: "S67890", Courses: make(map[string][]float64)}
+
+	// Add students to the system
+	sms.AddStudent(student1)
+	sms.AddStudent(student2)
+
+	// Enroll students in courses
+	student1.EnrollInCourse(course1)
+	student1.EnrollInCourse(course2)
+	student2.EnrollInCourse(course1)
+
+	// Add grades
+	student1.AddGrade("MATH101", 95)
+	student1.AddGrade("CS101", 88)
+	student2.AddGrade("MATH101", 72)
+
+	// Display information
+	fmt.Println("\nAll Students:")
+	sms.DisplayAllStudents()
+
+	fmt.Println("\nStudents in Mathematics:")
+	course1.DisplayStudents()
+}
