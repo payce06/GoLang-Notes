@@ -66,3 +66,19 @@ func (s *Student) AddGrade(courseCode string, grade float64) {
 		fmt.Printf("%s is not enrolled in the course with code %s.\n", s.Name, courseCode)
 	}
 }
+
+// CalculateGPA method to calculate and return the GPA
+func (s *Student) CalculateGPA() float64 {
+	totalGrades := 0.0
+	totalCourses := 0
+	for _, grades := range s.Courses {
+		for _, grade := range grades {
+			totalGrades += grade
+			totalCourses++
+		}
+	}
+	if totalCourses == 0 {
+		return 0
+	}
+	return totalGrades / float64(totalCourses)
+}
