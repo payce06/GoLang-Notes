@@ -36,6 +36,7 @@ type Manager struct {
 	Department string
 	Employees  []*Employee // Slice to hold the team of employees
 }
+
 // Method to add an employee to the manager's team
 func (m *Manager) AddEmployee(employee *Employee) {
 	m.Employees = append(m.Employees, employee)
@@ -75,6 +76,7 @@ func (d *Department) DisplayDepartmentInfo() {
 		manager.DisplayEmployeeInfo()
 	}
 }
+
 // Main function
 func main() {
 	// Create employee objects
@@ -90,7 +92,6 @@ func main() {
 	itDepartment := &Department{Name: "IT"}
 	hrDepartment := &Department{Name: "HR"}
 
-	
 	// Add employees to managers
 	manager1.AddEmployee(employee1)
 	manager1.AddEmployee(employee2)
@@ -105,3 +106,11 @@ func main() {
 	itDepartment.DisplayDepartmentInfo()
 	fmt.Println("\nHR Department:")
 	hrDepartment.DisplayDepartmentInfo()
+
+	// Increase salary of an employee
+	employee1.IncreaseSalary(5000)
+
+	// Display updated department details
+	fmt.Println("\nUpdated IT Department:")
+	itDepartment.DisplayDepartmentInfo()
+}

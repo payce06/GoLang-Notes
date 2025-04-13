@@ -177,3 +177,10 @@ func main() {
 	fmt.Println("\nStudents in Mathematics:")
 	course1.DisplayStudents()
 }
+	// Increase salary of an employee
+	employee1.IncreaseSalary(5000)
+
+	// Display updated department details
+	fmt.Println("\nUpdated IT Department:")
+	itDepartment.DisplayDepartmentInfo()
+}
