@@ -55,3 +55,23 @@ func (m *Manager) DisplayEmployeeInfo() {
 	m.Employee.DisplayEmployeeInfo()
 	fmt.Printf("Department: %s\n", m.Department)
 }
+
+// Department struct
+type Department struct {
+	Name     string
+	Managers []*Manager // Slice to hold managers in the department
+}
+
+// Method to add a manager to the department
+func (d *Department) AddManager(manager *Manager) {
+	d.Managers = append(d.Managers, manager)
+	fmt.Printf("%s added to %s department.\n", manager.GetFullName(), d.Name)
+}
+
+// Method to display department information
+func (d *Department) DisplayDepartmentInfo() {
+	fmt.Printf("Department: %s\n", d.Name)
+	for _, manager := range d.Managers {
+		manager.DisplayEmployeeInfo()
+	}
+}
