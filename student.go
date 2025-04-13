@@ -177,3 +177,24 @@ func main() {
 	fmt.Println("\nStudents in Mathematics:")
 	course1.DisplayStudents()
 }
+
+
+// Method to display employee information
+func (e *Employee) DisplayEmployeeInfo() {
+	fmt.Printf("Employee: %s\n", e.GetFullName())
+	fmt.Printf("Age: %d\n", e.Age)
+	fmt.Printf("Salary: $%.2f\n", e.Salary)
+}
+
+// Method to increase the salary of an employee
+func (e *Employee) IncreaseSalary(amount float64) {
+	e.Salary += amount
+	fmt.Printf("Salary of %s increased by $%.2f. New Salary: $%.2f\n", e.GetFullName(), amount, e.Salary)
+}
+
+// Manager struct inherits from Employee
+type Manager struct {
+	Employee
+	Department string
+	Employees  []*Employee // Slice to hold the team of employees
+}
