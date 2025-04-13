@@ -89,3 +89,19 @@ func main() {
 	// Create department objects
 	itDepartment := &Department{Name: "IT"}
 	hrDepartment := &Department{Name: "HR"}
+
+	
+	// Add employees to managers
+	manager1.AddEmployee(employee1)
+	manager1.AddEmployee(employee2)
+	manager2.AddEmployee(employee3)
+
+	// Add managers to departments
+	itDepartment.AddManager(manager1)
+	hrDepartment.AddManager(manager2)
+
+	// Display department details
+	fmt.Println("\nIT Department:")
+	itDepartment.DisplayDepartmentInfo()
+	fmt.Println("\nHR Department:")
+	hrDepartment.DisplayDepartmentInfo()
