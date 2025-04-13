@@ -75,3 +75,17 @@ func (d *Department) DisplayDepartmentInfo() {
 		manager.DisplayEmployeeInfo()
 	}
 }
+// Main function
+func main() {
+	// Create employee objects
+	employee1 := &Employee{"John", "Doe", 30, 50000}
+	employee2 := &Employee{"Jane", "Smith", 28, 55000}
+	employee3 := &Employee{"Alice", "Johnson", 35, 60000}
+
+	// Create manager objects
+	manager1 := &Manager{Employee: Employee{"Michael", "Brown", 40, 80000}, Department: "IT"}
+	manager2 := &Manager{Employee: Employee{"Sara", "Dave", 38, 85000}, Department: "HR"}
+
+	// Create department objects
+	itDepartment := &Department{Name: "IT"}
+	hrDepartment := &Department{Name: "HR"}
